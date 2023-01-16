@@ -20,10 +20,10 @@ jobs:
         run: npm run test
 
       - name: Run tests
+        run: npm run test
         env:
           BASE_URL: ${{ secrets.BASE_URL }}
           EMAIL: ${{ secrets.EMAIL }}
           PASSWD: ${{ secrets.PASSWD }}
           EMAIL_ERROR: ${{ secrets.EMAIL_ERROR }}
           PASSWD_ERROR: ${{ secrets.PASSWD_ERROR }}
-        run: npm run test

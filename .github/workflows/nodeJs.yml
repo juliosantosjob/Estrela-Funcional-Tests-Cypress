@@ -1,23 +1,23 @@
-name: Cy Pipe
+name: Pipe Cy
 
 on:
   push:
-      branches: [ master ]
   pull_request:
-      branches: [ master ]
-  
+    branches:
+      - 'master'
+
   schedule:
     - cron: '0 12,18 * * 1-5'    
 
 jobs:
-  e2e-tests:
-    name: Cypress run
+  cypress-run:
+    name: Execution e2e tests
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout in project
         uses: actions/checkout@v3
 
-      - name: Cypress run
+      - name: Setup cypress
         uses: cypress-io/github-action@v5
         env:
           BASE_URL: ${{ secrets.BASE_URL }}

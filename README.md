@@ -1,17 +1,18 @@
 # Execution Project
 
-### Web-Functional-Tests-Cy
-
-description
+E2e automation project based on the Cypress framework, the project was developed thinking about hiding sensitive 
+data using the secrets of github actions, and the test execution report I used the allure report, click 
+[here](https://juliosantosjob.github.io/Web-Functional-Tests-Cy) to see the result of the last execution.
 
 ### Dependencies for project installation and execution.
 
-- [NodeJs](https://nodejs.org/en/download/)
-- [Git](https://git-scm.com/downloads)
+- [NodeJs](https://nodejs.org/en/download/);
+- [Git](https://git-scm.com/downloads);
+- [Visual Studio Code](https://code.visualstudio.com/download);
 
 **Clone the project**
 ``` 
-git clone 
+git clone https://github.com/juliosantosjob/Web-Functional-Tests-Cy.git
 ```
 **Install project dependencies**
 

@@ -17,13 +17,9 @@ beforeEach(() => {
 });
 
 afterEach(function () {
-    try {
-        this.currentTest.state === 'failed' 
-            ? cy.wait(1000).screenshot('error/test-failed') 
-            : cy.wait(1000).screenshot('success/test-success');
-    } catch (error) {
-        console.log(error);
-    }
+    this.currentTest.state === 'failed'
+        ? cy.wait(1000).screenshot('error/test-failed')
+        : cy.wait(1000).screenshot('success/test-success');
 
     cy.log('Finishing test');
 });

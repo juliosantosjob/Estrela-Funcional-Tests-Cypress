@@ -2,3 +2,5 @@
 allure-report
 allure-results
 node_modules
+cypress/videos
+cypress/screenshots

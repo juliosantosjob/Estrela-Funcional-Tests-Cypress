@@ -23,8 +23,12 @@ jobs:
 
       - name: Run tests
         env:
-          BS_USER: ${{ secrets.BS_USER }}
-        run: npm run test @regressive
+          BASE_URL: ${{ secrets.BASE_URL }}
+          EMAIL: ${{ secrets.EMAIL }}
+          PASSWD: ${{ secrets.PASSWD }}
+          EMAIL_ERROR: ${{ secrets.EMAIL_ERROR }}
+          PASSWD_ERROR: ${{ secrets.PASSWD_ERROR }}
+        run: npm run test
 
       - name: Get Allure history
         uses: actions/checkout@v2
@@ -39,7 +43,7 @@ jobs:
         if: always()
         id: allure-report
         with:
-          allure_results: ./output
+          allure_results: ./allure-results
           gh_pages: gh-pages
           allure_report: allure-report
           allure_history: allure-history

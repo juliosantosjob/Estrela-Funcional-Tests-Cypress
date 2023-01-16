@@ -1,26 +1,19 @@
-name: Pipe Cy
+name: Cypress tests
 
-on:  
-  push:
-  pull_request:
-    branches:
-      - master
-
+on: [push]
 jobs:
-  tests-e2e:
-    runs-on: ubuntu-latest
+  cypress-run:
+    name: Cypress run
+    runs-on: ubuntu-20.04
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
       - name: Cypress run
         uses: cypress-io/github-action@v5
-
-      - name: Install dependencies
-        run: npm run test
-
-      - name: Run tests
-        run: npm run test
+        with:
+          record: true
+          build: yarn build
         env:
           BASE_URL: ${{ secrets.BASE_URL }}
           EMAIL: ${{ secrets.EMAIL }}

@@ -1,4 +1,4 @@
-name: Cypress tests
+name: Cy Pipe
 
 on:
   push:
@@ -7,9 +7,9 @@ on:
       branches: [ master ]
 
 jobs:
-  cypress-run:
+  e2e-tests:
     name: Cypress run
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -38,7 +38,7 @@ jobs:
         if: always()
         id: allure-report
         with:
-          allure_results: allure-results
+          allure_results: ./allure-results
           gh_pages: gh-pages
           allure_report: allure-report
           allure_history: allure-history

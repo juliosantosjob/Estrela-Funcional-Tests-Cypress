@@ -1,10 +1,11 @@
-name: Cypress Tests
+name: Cypress tests
 
 on: [push]
 
 jobs:
   cypress-run:
-    runs-on: ubuntu-latest
+    name: Cypress run
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -12,11 +13,14 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v5
         with:
-          build: npm run build
-          start: npm run test
+          record: true
         env:
           BASE_URL: ${{ secrets.BASE_URL }}
           EMAIL: ${{ secrets.EMAIL }}
           PASSWD: ${{ secrets.PASSWD }}
           EMAIL_ERROR: ${{ secrets.EMAIL_ERROR }}
           PASSWD_ERROR: ${{ secrets.PASSWD_ERROR }}
+          build: npm run build
+          start: npm run test
+          
+          

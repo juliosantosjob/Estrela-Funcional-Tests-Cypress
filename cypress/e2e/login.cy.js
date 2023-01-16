@@ -28,7 +28,7 @@ describe('Validate scenarios login', function () {
             .and('have.text', 'Minha Conta');
     });
 
-    it.skip('login email error', function () {
+    it('login email error', function () {
         cy.intercept('**/recaptcha/api2/**').as('recaptcha');
         cy.get('#bf-js-login').click();
 
@@ -44,7 +44,7 @@ describe('Validate scenarios login', function () {
             .and('have.contain', 'Usuário e/ou senha errada');
     });
 
-    it.skip('login password error', function () {
+    it('login password error', function () {
         cy.intercept('**/recaptcha/api2/**').as('recaptcha');
         cy.get('#bf-js-login').click();
 

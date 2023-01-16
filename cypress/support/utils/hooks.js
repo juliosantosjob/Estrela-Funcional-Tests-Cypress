@@ -20,6 +20,5 @@ afterEach(function () {
     this.currentTest.state === 'failed'
         ? cy.wait(1000).screenshot('error/test-failed')
         : cy.wait(1000).screenshot('success/test-success');
-
     cy.log('Finishing test');
 });

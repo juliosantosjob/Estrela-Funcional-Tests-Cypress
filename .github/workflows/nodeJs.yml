@@ -12,8 +12,6 @@ jobs:
 
       - name: Cypress run
         uses: cypress-io/github-action@v5
-        with:
-          record: true
         env:
           BASE_URL: ${{ secrets.BASE_URL }}
           EMAIL: ${{ secrets.EMAIL }}

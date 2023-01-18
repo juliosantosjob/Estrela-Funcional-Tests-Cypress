@@ -1,0 +1,1 @@
+{"total":2,"items":[{"uid":"4e0a3989df3dd2fdc3c8f1a5a84a7ebd","name":"Products scenarios","statistic":{"failed":1,"broken":0,"skipped":0,"passed":1,"unknown":0,"total":2}},{"uid":"fcd35246b05ef3050cb12c3aae280aa7","name":"Validate scenarios login","statistic":{"failed":0,"broken":0,"skipped":0,"passed":3,"unknown":0,"total":3}}]}

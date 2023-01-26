@@ -1,0 +1,6 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Thu Jan 26 20:31:44 GMT 2023","Thu Jan 26 20:31:56 GMT 2023","12025","","Validate scenarios login","","","","login password error",""
+"passed","Thu Jan 26 20:31:01 GMT 2023","Thu Jan 26 20:31:24 GMT 2023","23309","","Validate scenarios login","","","","login success",""
+"passed","Thu Jan 26 20:30:09 GMT 2023","Thu Jan 26 20:30:37 GMT 2023","27706","","Products scenarios","","","","remove product to cart",""
+"passed","Thu Jan 26 20:29:26 GMT 2023","Thu Jan 26 20:30:06 GMT 2023","39279","","Products scenarios","","","","adding product to cart",""
+"passed","Thu Jan 26 20:31:26 GMT 2023","Thu Jan 26 20:31:38 GMT 2023","11673","","Validate scenarios login","","","","login email error",""

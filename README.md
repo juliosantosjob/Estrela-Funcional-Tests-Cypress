@@ -6,9 +6,9 @@ data using the secrets of github actions, and the test execution report I used t
 
 ### Dependencies for project installation and execution.
 
-- [NodeJs](https://nodejs.org/en/download/);
-- [Git](https://git-scm.com/downloads);
-- [Visual Studio Code](https://code.visualstudio.com/download);
+- [NodeJs](https://nodejs.org/en/download/)
+- [Git](https://git-scm.com/downloads)
+- [Visual Studio Code](https://code.visualstudio.com/download)
 
 **Clone the project**
 ``` 

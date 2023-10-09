@@ -1,6 +1,6 @@
 describe('Products scenarios', () => {
     const email = Cypress.env('email');
-    const passwd = Cypress.env('password');
+    const passwd = Cypress.env('passwd');
     let pants;
     
     beforeEach(() => {

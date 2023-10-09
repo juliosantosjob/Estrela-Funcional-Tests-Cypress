@@ -1,5 +1,3 @@
-/// <reference types="cypress" />
-
 describe('Validate scenarios login', () => {
     const email = Cypress.env('email');
     const password = Cypress.env('password');

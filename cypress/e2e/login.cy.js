@@ -1,8 +1,12 @@
 /// <reference types="cypress" />
 
 describe('Validate scenarios login', function () {
-
-    it('login success', function () {
+    const email = Cypress.env('email');
+    const password = Cypress.env('password');
+    const emailError = Cypress.env('emailError');
+    const passwdError = Cypress.env('passwordError');
+    
+    it('login success', () => {
         cy.intercept('**/recaptcha/api2/**').as('recaptcha');
         cy.intercept('**/profileSystem/getProfile').as('getProfile');
         cy.intercept('**/api/events').as('user');
@@ -11,8 +15,8 @@ describe('Validate scenarios login', function () {
         cy.wait('@recaptcha');
         cy.get('[id*="loginWithU"]').click();
 
-        cy.get('#inputEmail').type(`${Cypress.env('email')}`, { delay: 180 });
-        cy.get('#inputPassword').type(`${Cypress.env('passwd')}`, { delay: 180 }, { log: false });
+        cy.get('#inputEmail').type(email, { delay: 180 });
+        cy.get('#inputPassword').type(password, { delay: 180 }, { log: false });
         cy.get('[type=submit]').first().click();
 
         cy.wait('@user');
@@ -28,15 +32,15 @@ describe('Validate scenarios login', function () {
             .and('have.text', 'Minha Conta');
     });
 
-    it('login email error', function () {
+    it('login email error', () => {
         cy.intercept('**/recaptcha/api2/**').as('recaptcha');
         cy.get('#bf-js-login').click();
 
         cy.wait('@recaptcha');
         cy.get('[id*="loginWithU"]').click();
 
-        cy.get('#inputEmail').type(`${Cypress.env('emailError')}`, { delay: 180 });
-        cy.get('#inputPassword').type(`${Cypress.env('password')}`, { delay: 180 });
+        cy.get('#inputEmail').type(emailError, { delay: 180 });
+        cy.get('#inputPassword').type(password, { delay: 180 });
         cy.get('[type=submit]').first().click();
 
         cy.get('[class="alert alert-warning alert-wrong-pswd"]')
@@ -44,15 +48,15 @@ describe('Validate scenarios login', function () {
             .and('have.contain', 'Usuário e/ou senha errada');
     });
 
-    it('login password error', function () {
+    it('login password error', () => {
         cy.intercept('**/recaptcha/api2/**').as('recaptcha');
         cy.get('#bf-js-login').click();
 
         cy.wait('@recaptcha');
         cy.get('[id*="loginWithU"]').click();
 
-        cy.get('#inputEmail').type(`${Cypress.env('email')}`, { delay: 180 });
-        cy.get('#inputPassword').type(`${Cypress.env('passwordError')}`, { delay: 180 });
+        cy.get('#inputEmail').type(email, { delay: 180 });
+        cy.get('#inputPassword').type(passwdError, { delay: 180 });
         cy.get('[type=submit]').first().click();
 
         cy.get('[class="alert alert-warning alert-wrong-pswd"]')

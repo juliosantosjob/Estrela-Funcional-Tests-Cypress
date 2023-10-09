@@ -15,7 +15,7 @@ describe('Products scenarios', () => {
         cy.fixture('itens').then((iten) => {
             pants = iten.product.toLowerCase();
 
-            cy.get('.bf-search__field').type(pants).type('{enter}');
+            cy.get('.bf-search__field').type(`${pants}{enter}`);
             cy.get('[class="bf-shelf-item__container"]').first().then(item => {
                 cy.wrap(item).should('contain', pants);
                 cy.wrap(item).click();

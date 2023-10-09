@@ -1,8 +1,8 @@
 describe('Validate scenarios login', () => {
     const email = Cypress.env('email');
-    const password = Cypress.env('password');
+    const password = Cypress.env('passwd');
     const emailError = Cypress.env('emailError');
-    const passwdError = Cypress.env('passwordError');
+    const passwdError = Cypress.env('passwdError');
     
     it('login success', () => {
         cy.intercept('**/recaptcha/api2/**').as('recaptcha');

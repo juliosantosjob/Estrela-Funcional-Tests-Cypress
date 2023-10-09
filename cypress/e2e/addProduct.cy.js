@@ -1,17 +1,19 @@
-/// <reference types="cypress" />
-
-describe('Products scenarios', function () {
-    beforeEach(function () {
-        cy.login('email', 'passwd');
+describe('Products scenarios', () => {
+    const email = Cypress.env('email');
+    const passwd = Cypress.env('password');
+    let pants;
+    
+    beforeEach(() => {
+        cy.login(email, passwd);
     });
 
-    it('adding product to cart', function () {
+    it('adding product to cart', () => {
         cy.intercept('**/plugins/customer_chat/SDK/**').as('customerChat');
         cy.wait('@customerChat');
 
         cy.get('[class="el-search-autocomplete__wrapper"]').click();
-        cy.fixture('itens').then(function (iten) {
-            let pants = iten.product.toLowerCase();
+        cy.fixture('itens').then((iten) => {
+            pants = iten.product.toLowerCase();
 
             cy.get('.bf-search__field').type(pants).type('{enter}');
             cy.get('[class="bf-shelf-item__container"]').first().then(item => {
@@ -31,7 +33,7 @@ describe('Products scenarios', function () {
         });
     });
 
-    it('remove product to cart', function () {
+    it('remove product to cart', () => {
         cy.addToCart('calça');
         cy.get('a[title="remover"]').last().click();
 

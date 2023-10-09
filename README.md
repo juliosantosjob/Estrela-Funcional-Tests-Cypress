@@ -1,4 +1,4 @@
-## Project Web-Functional-Tests-Cy
+## Project Estrela-E2E-Tests-Cypress
 
 E2e automation project based on the Cypress framework, the project was developed thinking about hiding sensitive 
 data using the secrets of github actions, and the test execution report I used the allure report, click 

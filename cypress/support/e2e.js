@@ -1,5 +1,3 @@
-/// <reference types="cypress" />
-
 import './utils/hooks';
 import './commands/commands';
 import './commands/commandsProducts';

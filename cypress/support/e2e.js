@@ -1,6 +1,5 @@
-import './utils/hooks';
-import './commands/commands';
-import './commands/commandsProducts';
+import './hooks';
+import './commands';
 import '@shelex/cypress-allure-plugin';
 
 Cypress.on('uncaught:exception', () => { return false; });

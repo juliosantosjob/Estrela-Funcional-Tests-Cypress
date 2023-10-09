@@ -7,7 +7,7 @@ describe('Products scenarios', () => {
         cy.login(email, passwd);
     });
 
-    it('adding product to cart', () => {
+    it('Adding product to cart', () => {
         cy.intercept('**/plugins/customer_chat/SDK/**').as('customerChat');
         cy.wait('@customerChat');
 
@@ -33,7 +33,7 @@ describe('Products scenarios', () => {
         });
     });
 
-    it('remove product to cart', () => {
+    it('Remove product to cart', () => {
         cy.addToCart('calça');
         cy.get('a[title="remover"]').last().click();
 

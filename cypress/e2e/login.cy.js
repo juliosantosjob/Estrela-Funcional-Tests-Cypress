@@ -4,11 +4,13 @@ describe('Validate scenarios login', () => {
     const emailError = Cypress.env('emailError');
     const passwdError = Cypress.env('passwdError');
     
-    it('login success', () => {
+    beforeEach(() => { 
         cy.intercept('**/recaptcha/api2/**').as('recaptcha');
         cy.intercept('**/profileSystem/getProfile').as('getProfile');
         cy.intercept('**/api/events').as('user');
+    });
 
+    it('Login success', () => {
         cy.get('#bf-js-login').click();
         cy.wait('@recaptcha');
         cy.get('[id*="loginWithU"]').click();
@@ -30,10 +32,8 @@ describe('Validate scenarios login', () => {
             .and('have.text', 'Minha Conta');
     });
 
-    it('login email error', () => {
-        cy.intercept('**/recaptcha/api2/**').as('recaptcha');
+    it('Login email error', () => {
         cy.get('#bf-js-login').click();
-
         cy.wait('@recaptcha');
         cy.get('[id*="loginWithU"]').click();
 
@@ -46,10 +46,8 @@ describe('Validate scenarios login', () => {
             .and('have.contain', 'Usuário e/ou senha errada');
     });
 
-    it('login password error', () => {
-        cy.intercept('**/recaptcha/api2/**').as('recaptcha');
+    it('Login password error', () => {
         cy.get('#bf-js-login').click();
-
         cy.wait('@recaptcha');
         cy.get('[id*="loginWithU"]').click();
 

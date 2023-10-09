@@ -1,5 +1,3 @@
-/// <reference types="cypress" />
-
 /**
  * Support hooks for project execution.
  */
@@ -9,9 +7,7 @@ before(() => {
 });
 
 beforeEach(() => {
-    cy.log('Starting test...');
-    cy.log(`Running Scenario: [ ${Cypress.currentTest.title} ]`);
-
+    cy.log(`Starting test... \nRunning Scenario: [ ${Cypress.currentTest.title} ]`);
     cy.visit('/');
     cy.viewport(1024, 768);
 });
